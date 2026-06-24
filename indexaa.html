@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Smart Contract Auditor</title>
+</head>
+
+<body>
+    <h1>AI Smart Contract Auditor</h1>
+
+    <textarea id="contract" rows="20" cols="80">
+Paste Solidity Here
+    </textarea>
+
+    <br><br>
+
+    <button onclick="analyze()">
+        Analyze Contract
+    </button>
+
+    <pre id="output"></pre>
+
+    <script>
+        function analyze() {
+            const code =
+                document.getElementById("contract").value;
+
+            let report =
+                `=== AUDIT REPORT ===
+
+Functions:
+`;
+
+            if (code.includes("deposit")) {
+                report += "- deposit\n";
+            }
+
+            if (code.includes("withdraw")) {
+                report += "- withdraw\n";
+                report += "\n[HIGH] Withdrawal function detected";
+            }
+
+            if (code.includes("owner")) {
+                report += "\n[MEDIUM] Centralized ownership detected";
+            }
+
+            document.getElementById("output").textContent =
+                report;
+        }
+    </script>
+</body>
+
+</html>
