@@ -46,9 +46,3 @@ Findings:
 - Function call graph generation
 - Risk scoring
 - Interactive web dashboardements
-
-* AI-powered vulnerability analysis
-* Solana support
-* Function call graph generation
-* Risk scoring
-* Web interface
