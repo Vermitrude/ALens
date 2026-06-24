@@ -38,7 +38,14 @@ Findings:
 * Rust
 * Cargo
 
-## Future Improvements
+ ## Future Improvements
+
+- AI-powered vulnerability analysis
+- Solana and Anchor program support
+- Rust smart contract analysis
+- Function call graph generation
+- Risk scoring
+- Interactive web dashboardements
 
 * AI-powered vulnerability analysis
 * Solana support
