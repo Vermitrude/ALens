@@ -13,10 +13,9 @@ fn main() {
 
     let filename = &args[1]; /* you'd think the index is wrong, but it's correct.
     The first argument is the program name, so the second argument is the filename.
-    cos 'cargo run' actually speaks to cargo, and cargo speaks to rustc, and rustc speaks to the program.*/ 
+    cos 'cargo run' actually speaks to cargo, and cargo speaks to rustc, and rustc speaks to the program.*/
 
-    let contract = std::fs::read_to_string(filename)
-        .expect("Could not read contract file");
+    let contract = std::fs::read_to_string(filename).expect("Could not read contract file");
 
     let mut functions = vec![];
     let mut state_vars = vec![];
@@ -28,11 +27,7 @@ fn main() {
             let parts: Vec<&str> = trimmed.split_whitespace().collect();
 
             if parts.len() > 1 {
-                let name = parts[1]
-                    .split('(')
-                    .next()
-                    .unwrap()
-                    .to_string();
+                let name = parts[1].split('(').next().unwrap().to_string();
 
                 functions.push(name);
             }
