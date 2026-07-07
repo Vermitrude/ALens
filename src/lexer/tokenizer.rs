@@ -214,6 +214,13 @@ impl Lexer {
                     "if" => Token::If,
                     "else" => Token::Else,
                     "return" => Token::Return,
+                    "public" => Token::Public,
+                    "private" => Token::Private,
+                    "payable" => Token::Payable,
+                    "pure" => Token::Pure,
+                    "view" => Token::View,
+                    "external" => Token::External,
+                    "internal" => Token::Internal,
                     _ => Token::Identifier(ident),
                 }
             }
