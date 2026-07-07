@@ -172,4 +172,34 @@ Benefits:
 
 The long-term objective is for the lexer to tokenize arbitrary Solidity source files with high accuracy while remaining modular, maintainable, and easy to extend. Each iteration should improve correctness, readability, and support for additional language features without significantly increasing the complexity of `next_token()`.
 
+
+a test was conducted and this is what i came out with
+
+Implement // and /* ... */ comment skipping.
+Add support for compound assignment operators (+=, -=, etc.).
+Add a token for ^ if you want to tokenize version constraints directly.
+Add more Solidity keywords such as returns, constructor, mapping, and others as you expand language coverage.
+
+## Lexer v1.0 Test Summary
+
+A real Solidity contract (`Counter.sol`) was successfully tokenized from start to `EOF` without crashing, confirming that the core lexer is functional.
+
+### Successfully Recognized
+
+* Keywords (`contract`, `function`, `pragma`, `public`, `view`, `return`)
+* Identifiers
+* Numbers
+* Braces, parentheses, and semicolons
+* Basic operators
+* End-of-file (`EOF`)
+
+### Improvements Identified
+
+* Skip single-line (`//`) and multi-line (`/* ... */`) comments instead of tokenizing their contents.
+* Support compound assignment operators such as `+=`, `-=`, `*=`, and `/=`.
+* Add missing Solidity keywords (e.g., `returns`) and continue expanding language coverage.
+* Add support for additional Solidity operators and symbols (e.g., `^` for version constraints).
+
+**Conclusion:** The lexer successfully tokenizes a meaningful subset of Solidity and is ready for iterative improvements toward production-quality language support.
+
 07-07-2026
