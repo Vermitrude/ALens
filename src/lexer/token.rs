@@ -1,3 +1,5 @@
+#[derive(PartialEq, Debug)]
+
 pub enum Token {
     //keywords
     Contract,
@@ -5,6 +7,14 @@ pub enum Token {
     Else,
     Function,
     Return,
+    Pragma,
+    Public,
+    Private,
+    Payable,
+    Pure,
+    View,
+    External,
+    Internal,
 
     //literals
     Number(String),
@@ -36,5 +46,6 @@ pub enum Token {
     GreaterThanOrEqual,
     LessThanOrEqual, // 4, 11
 
+    Illegal,
     EOF,
 }
